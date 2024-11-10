@@ -1,0 +1,61 @@
+/* עיצוב הלוח */
+#board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    width: 480px;
+    height: 480px;
+    margin: 20px auto;
+    border: 2px solid black;
+}
+
+/* עיצוב תאי הלוח */
+.cell {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.white {
+    background-color: #f0d9b5;
+}
+
+.cell.black {
+    background-color: #b58863;
+}
+
+/* עיצוב החיילים */
+.piece {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.player1 {
+    background-color: red;
+}
+
+.player2 {
+    background-color: black;
+}
+
+/* סימון חיילים שהם "מלכים" */
+.king::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+}
+
+/* הדגשת תאים זמינים */
+.cell.highlight {
+    background-color: #99ff99;
+}
